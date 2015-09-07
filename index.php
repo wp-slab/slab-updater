@@ -19,13 +19,9 @@ define('SLAB_UPDATER_DIR', plugin_dir_path(__FILE__));
 define('SLAB_UPDATER_URL', plugin_dir_url(__FILE__));
 
 
+// Includes
+include SLAB_UPDATER_DIR . 'functions.php';
+
+
 // Hooks
-add_action('slab_init', 'slab_updater_init');
-
-
-// Init
-function slab_updater_init($slab) {
-
-	$slab->autoloader->registerNamespace('Slab\\Updater', SLAB_UPDATER_DIR . 'src');
-
-}
+add_action('slab_init', 'Slab\Updater\slab_updater_init');
